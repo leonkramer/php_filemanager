@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /
+
+SetEnv no-gzip dont-vary
+
+#RewriteCond %{HTTPS} !=on
+#    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#RewriteCond %{HTTP_HOST} !^(rerake.net)$ [NC]
+#    RewriteRule ^(.*)$ http://rerake.net/$1 [L,R=301]
+
+#RewriteRule ^test.php$ .php_filemanager/test.php [L]
+RewriteRule ^(.*)$ .php_filemanager/index.php?str=_$1 [L,QSA]
