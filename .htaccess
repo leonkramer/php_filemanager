@@ -3,10 +3,10 @@ RewriteBase /
 
 SetEnv no-gzip dont-vary
 
-RewriteCond %{HTTPS} !=on
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{HTTPS} !=on
+#    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-RewriteCond %{HTTP_HOST} !^(domain.com)$ [NC]
-    RewriteRule ^(.*)$ http://domain.com/$1 [L,R=301]
+#RewriteCond %{HTTP_HOST} !^(domain.com)$ [NC]
+#    RewriteRule ^(.*)$ http://domain.com/$1 [L,R=301]
 
 RewriteRule ^(.*)$ .php_filemanager/index.php?str=_$1 [L,QSA]
